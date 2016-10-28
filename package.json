@@ -1,6 +1,6 @@
 {
   "name": "smbopenr",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Provide a readable fd for an smb path.",
   "main": "index.js",
   "author": "Stefan Buller",
