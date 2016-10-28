@@ -28,7 +28,7 @@ function getAndOpen(path, cb) {
 
 		let local = fs.createWriteStream(null, {fd})
 		// ensure path looks sane before this point
-		let smbget = spawn('smbget', ['-O', '-a', "smb:" + path])
+		let smbget = spawn('smbget', ['-O', '-a', '-q', "smb:" + path])
 
 		smbget.stdout.pipe(local)
 
