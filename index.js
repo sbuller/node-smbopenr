@@ -35,7 +35,7 @@ function getAndOpen(path, cb) {
 		smbget.on('error', err=>cb(new Error("Couldn't execute smbget", err)))
 		smbget.on('exit', code=>code?
 			cb(new Error("Exit code from smbget", code)):
-			fs.open(tmpPath, 'r', cb)
+			fs.open(tmpPath, 'r', (err, fd)=>cb(err, fd, cleanup))
 		)
 	})
 }
